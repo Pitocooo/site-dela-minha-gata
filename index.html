@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Dailane 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #ffc0cb;
+      overflow-x: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: green;
+      transform: rotate(45deg);
+      animation: float 5s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: green;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .letter {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
+      display: none;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .open-btn {
+      background-color: #ff69b4;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .open-btn:hover {
+      background-color: #ff1493;
+    }
+
+    img {
+      max-width: 90%;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💖 Oi, meu amor 💖</h1>
+    <button class="open-btn" onclick="openLetter()">Clique para abrir a carta 💌</button>
+    <div class="letter" id="letter">
+      <p>
+        Olá meu amor, fiz essa carta em forma de site para lhe entregar mesmo pela internet o meu amor por você.<br>
+        Tu és a luz da minha vida. Eu sou grato por tanto amor, tanto carinho e gostosura que você fornece pra mim.<br>
+        Desde que eu te conheci eu vivo os dias mais felizes da minha vida, e eu farei de tudo para ter esses mesmos dias até o dia que eu me for.<br>
+        Eu vou me casar e criar uma família com você. <br>
+        Eu te amo Dailane Nascimento Muniz.
+      </p>
+    </div>
+    <img src="Imagem do WhatsApp de 2025-04-16 à(s) 00.44.01_6ed82d58.jpg" alt="Foto 1">
+    <img src="Imagem do WhatsApp de 2025-04-16 à(s) 00.44.04_a6589cd5.jpg" alt="Foto 2">
+    <img src="Imagem do WhatsApp de 2025-04-16 à(s) 00.44.03_b3550d27.jpg" alt="Foto 3">
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById('letter').style.display = 'block';
+    }
+
+    // Criar corações
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
